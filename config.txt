@@ -1,0 +1,12 @@
+--write-info-json
+--download-archive archive.txt
+--output "./downloads/%(extractor)s/%(id)s/%(title)s - %(uploader)s - %(upload_date)s.%(ext)s"
+--write-comments
+--write-description
+--write-annotations
+--write-thumbnail
+--all-subs
+--add-metadata
+--force-overwrites
+--ignore-errors
+--no-progress

@@ -9,11 +9,13 @@ Need to be installed and added to PATH:
 - Inside the repository folder create a file named urls.txt and add URLs
 - Run either download.ps1 or download.sh
 - After downloads finish videos can be watched from play.html
+- Verify file integrity by running `node verify.js` in the terminal
 
 # Benefits
 - Provides a simple GUI for watching videos
 - No need to configure and run a web server
 - Portable
+- Automatically generates MD5 hashes for downloaded files
 
 # Limitations
 - Not all videos can be played in the browser due to varying codec support (to work around this have your browser open media in VLC)

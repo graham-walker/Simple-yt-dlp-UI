@@ -17,7 +17,7 @@ script -q /dev/null -c "yt-dlp --config-locations config.txt -a urls.txt 2>&1" |
 
 # Check if Node.js is installed
 if ! which node > /dev/null; then 
-    echo "Install Node.js >=20 to generate play.html"
+    echo "Install Node.js >=20 to generate play.html and hash files"
     exit 1
 fi
 
@@ -27,6 +27,7 @@ MAJOR_VERSION=$(echo $NODE_VERSION | cut -d'.' -f1 | cut -c2-)
 
 if [ "$MAJOR_VERSION" -ge 20 ]; then
     node generate.js
+    node hash.js
 else
-    echo "Install Node.js >=20 to generate play.html"
+    echo "Install Node.js >=20 to generate play.html and hash files"
 fi

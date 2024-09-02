@@ -30,7 +30,7 @@ try {
     # Check if Node.js is installed
     $nodePath = Get-Command "node" -ErrorAction SilentlyContinue
     if ($null -eq $nodePath) {
-        Write-Host "Install Node.js >=20 to generate play.html"
+        Write-Host "Install Node.js >=20 to generate play.html and hash files"
         Read-Host -Prompt "Press Enter to exit"
         exit 1
     }
@@ -40,8 +40,9 @@ try {
     $majorVersion = $nodeVersion.TrimStart('v').Split('.')[0]
     if ([int]$majorVersion -ge 20) {
         & node generate.js
+        & node hash.js
     } else {
-        Write-Host "Install Node.js >=20 to generate play.html"
+        Write-Host "Install Node.js >=20 to generate play.html and hash files"
     }
 
     Read-Host -Prompt "Press Enter to exit"

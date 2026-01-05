@@ -58,7 +58,7 @@ info.sort((a, b) => b.date - a.date);
 function parseDate(dateString) {
     try {
         if (dateString.length !== 8) throw new Error('Unexpected length');
-        return new Date(parseInt(dateString.substring(0, 4), 10), parseInt(dateString.substring(4, 6), 10), parseInt(dateString.substring(6, 8), 10)).getTime();
+        return new Date(parseInt(dateString.substring(0, 4), 10), parseInt(dateString.substring(4, 6), 10) - 1, parseInt(dateString.substring(6, 8), 10)).getTime();
     } catch (err) {
         return 0;
     }
